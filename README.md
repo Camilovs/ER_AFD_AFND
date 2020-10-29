@@ -1,8 +1,8 @@
 # ER_AFD_AFND
 ## TAREA 1 
 ### Integrantes 👨‍💻
-- Elias Avendaño.
-- Nicolas Rojas.
+- Ariel Valenzuela.
+- José Villar.
 - Camilo Villalobos.
 
 ### Profesor
@@ -10,6 +10,7 @@
 
 ### Asignatura 
 - Máquinas abstractas y lenguajes formales. 
+- Universidad de Talca.
 
 ### Temas 🎯
 - Expresion regular **ER**
