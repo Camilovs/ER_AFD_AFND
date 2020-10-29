@@ -13,8 +13,8 @@ son los caracteres que están asociados:
 - Φ: ~
 - Σ: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 
-El símbolo de la concatenación es el punto ., el de ε el guión bajo _ y el de la ER vacía ~. Noten que el texto sólo esta formado por letras mayúsculas, minúsculas y dígitos. 
-Se excluyen ñ y Ñ. Los demás símbolos (., |, *, (, ), _ y ~) se utilizan para escribir las ERs o para describir los autómatas.
+El símbolo de la concatenación es el punto ., el de ε el guión bajo \_ y el de la ER vacía ~. Noten que el texto sólo esta formado por letras mayúsculas, minúsculas y dígitos. 
+Se excluyen ñ y Ñ. Los demás símbolos (., |, *, (, ), \_ y ~) se utilizan para escribir las ERs o para describir los autómatas.
 Entonces, van a recibir la ER de la entrada estándar y van a escribir el AFND en la
 salida estándar. Por ejemplo, en la consola de linux ejecutan lo siguiente:  
 ```
@@ -56,8 +56,8 @@ siguiente:
 tarea1P2 < afnd.txt > afd.txt 
 ```
 Se usa la misma notación que en la Parte 1, vale decir, el alfabeto del archivo de texto
-es el siguiente: Σ = {[a-z],[A-Z],[0-9],|,_}. Por simpleza, se excluye la “ñ” del alfabeto.
-Se usa el caracter “_” para representar el símbolo ε. el caracter “:” para estados equivalentes, y otros caracteres (: = { , } ( )) para mejorar la visualización
+es el siguiente: Σ = {[a-z],[A-Z],[0-9],|,\_}. Por simpleza, se excluye la “ñ” del alfabeto.
+Se usa el caracter “\_” para representar el símbolo ε. el caracter “:” para estados equivalentes, y otros caracteres (: = { , } ( )) para mejorar la visualización
 del archivo.
 Si consideramos el archivo del AFND producido de la Parte 1 se obtiene la siguiente
 salida. Noten que podrían haber pequeñas variantes si es que cambian de orden los elementos
@@ -99,8 +99,8 @@ a ejecutar lo siguiente:
 ```
 tarea1P3 < afd.txt > afdM.txt
 ```
-El alfabeto del archivo de texto es el siguiente: Σ = {[a-z],[A-Z],[0-9],|,_}. Por
-simpleza, se excluye la “ñ” del alfabeto. Se usa el caracter “_” para representar el símbolo ε.
+El alfabeto del archivo de texto es el siguiente: Σ = {[a-z],[A-Z],[0-9],|,\_}. Por
+simpleza, se excluye la “ñ” del alfabeto. Se usa el caracter “\_” para representar el símbolo ε.
 el caracter “:” para estados equivalentes, y otros caracteres (: = { , } ( )) para mejorar
 la visualización del archivo.
 Si consideramos el siguiente archivo de entrada (noten que conserva el formato del AFD
