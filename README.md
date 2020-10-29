@@ -18,4 +18,4 @@
 - Miminización de Automatas
 
 ### Requerimientos
-- Para ver los requerimientos leer archivo [Instrucciones.md](https://github.com/Camilovs/ER_AFD_AFND/blob/main/README.md)
+- Para ver los requerimientos leer archivo [Instrucciones.md](https://github.com/Camilovs/ER_AFD_AFND/blob/main/Instrucciones.md)
