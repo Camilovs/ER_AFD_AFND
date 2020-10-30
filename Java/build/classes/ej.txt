@@ -1,0 +1,10 @@
+tarea1
+Iniciando procesamiento fichero 
+Generando string de contenido del archivo..
+Contenido generado: (ab|aba)*
+Procesamiento de fichero listo!
+Guardando archivo
+hola
+soy
+un
+ejemplo

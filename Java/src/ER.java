@@ -1,5 +1,5 @@
 
-package tarea1malf;
+
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,7 +7,13 @@ import java.util.Map;
 import java.util.Stack;
 
 public class ER {
-    private String er;
+    
+    private String expression;
+
+    public ER(String er) {
+        this.expression = er;
+    }
+    
     
      
     private int obtenerPrecedencia(Character c, Map<Character, Integer> precedencias) {
@@ -23,7 +29,7 @@ public class ER {
         map.put('*', 4);
         precedencia = Collections.unmodifiableMap(map);
         
-        String er = this.er;
+        String er = this.expression;
         String temp = "";
         Stack<Character> stack = new Stack<Character>();
         for (Character c : er.toCharArray()) {
