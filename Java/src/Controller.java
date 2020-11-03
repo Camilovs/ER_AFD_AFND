@@ -8,17 +8,20 @@ public class Controller {
     private AFND afnd;
     private TextFile file;
 
-    public Controller(String option, TextFile fopen,String fwrite ) {
+    public Controller(String option, TextFile fopen) {
         
         switch (option.toLowerCase()) {
-            case "tarea1p1":
+            case "tarea1p1":// EJECUCION DE ER -> AFND
                 this.ejec_option = 1;
+                ER regex = new ER(file.getTextFile());
+                AFND afnd = new AFND(regex);     
                 break;
-            case "tarea1p2":
+            case "tarea1p2"://EJECUCION DE AFND -> AFD
                 this.ejec_option = 2;
                 break;
-            case "tarea1p3":
+            case "tarea1p3"://EJECUCION DE Miminizacion de AFD
                 this.ejec_option = 3;
+                AFDMin adfmin = new AFDMin(fopen);          
                 break;              
             default:
                 System.err.println("Primer argumento invalido, cerrando programa");

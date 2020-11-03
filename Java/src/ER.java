@@ -9,12 +9,13 @@ import java.util.Stack;
 public class ER {
     
     private String expression;
+    private String postfijo_regex;
 
     public ER(String er) {
         this.expression = er;
+        postfijo_regex = pasarAPostfijo();
+        System.out.println(postfijo_regex);
     }
-    
-    
      
     private int obtenerPrecedencia(Character c, Map<Character, Integer> precedencias) {
         Integer precedencia = precedencias.get(c);

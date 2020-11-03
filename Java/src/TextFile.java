@@ -40,8 +40,49 @@ public class TextFile {
             System.out.println(line);
         }
             
-        
     }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public Scanner getFscan() {
+        return fscan;
+    }
+
+    public void setFscan(Scanner fscan) {
+        this.fscan = fscan;
+    }
+
+    public FileWriter getFwrite() {
+        return fwrite;
+    }
+
+    public void setFwrite(FileWriter fwrite) {
+        this.fwrite = fwrite;
+    }
+
+    public BufferedWriter getBwrite() {
+        return bwrite;
+    }
+
+    public void setBwrite(BufferedWriter bwrite) {
+        this.bwrite = bwrite;
+    }
+
+    public String getTextFile() {
+        return textFile;
+    }
+
+    public void setTextFile(String textFile) {
+        this.textFile = textFile;
+    }
+    
+    
     
     
     
