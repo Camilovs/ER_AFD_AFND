@@ -1,6 +1,4 @@
 
-
-
 public class Controller {
     private int ejec_option;
     private ER expression;
