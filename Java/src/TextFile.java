@@ -1,6 +1,3 @@
-
-
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,7 +11,6 @@ public class TextFile {
     private FileWriter fwrite;
     private BufferedWriter bwrite;
     private String textFile="";
-    
 
     public TextFile(Scanner file) {
         System.out.println("Iniciando procesamiento fichero ");
