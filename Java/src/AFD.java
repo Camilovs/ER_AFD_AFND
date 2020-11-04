@@ -50,6 +50,50 @@ public class AFD {
         this.F = extractStates(finalStatesLine);
 
     }
+    /**
+     * NO VALIDO SOLO PARA FINES DE PRUEBAS
+     * 
+     */
+    public AFD(Scanner scanner) { 
+        this.delta = new ArrayList<>();
+        //Scanner scanner = new Scanner(System.in);
+        ArrayList<String> transitions = new ArrayList<>();
+        Stack<String> rest = new Stack<>();
+        Stack<String> restInOrder = new Stack<>();
+        String statesLine, sigmaLine, finalStatesLine, startStateLine;
+
+        scanner.nextLine(); // La primera línea del archivo no sirve
+        statesLine = scanner.nextLine(); // La segunda línea es el conjunto de estados K del AFND
+        sigmaLine =  scanner.nextLine(); // La tercera línea es el alfabeto sigma
+        scanner.nextLine(); // La cuarta línea no sirve (dice "delta")
+
+        // Las lineas a continuación son una cantidad indefinida de 
+        // funciones de transición delta, seguidas del estado inicial y el
+        // conjunto de estados finales
+        while(scanner.hasNext()) {
+            rest.push(scanner.next());
+        }
+
+        finalStatesLine = rest.pop(); // La última línea es el conjunto de estados finales
+        startStateLine = rest.pop(); // La penúltima línea es el estado inicial
+
+        // Lo que queda en el stack son las transiciones
+        transitions = extractTransitions(rest);
+        String[] splitted;
+        Link link;
+        for(String transition : transitions) {
+            splitted = splitTransition(transition); // Retorna un arreglo de Strings con los 3 elementos de una transicion
+            link = new Link(splitted[0], splitted[1], splitted[2]);
+            this.delta.add(link);
+        }
+
+
+        this.K = extractStates(statesLine);
+        this.sigma = extractSigma(sigmaLine);
+        this.s = startStateLine.substring(2);
+        this.F = extractStates(finalStatesLine);
+
+    }
 
     private ArrayList<String> extractStates(String statesLine) {
         ArrayList<String> states = new ArrayList<>();

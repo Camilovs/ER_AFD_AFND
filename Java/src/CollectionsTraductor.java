@@ -29,9 +29,8 @@ public class CollectionsTraductor {
         
         collections = new ArrayList<>();
         newState = new ArrayList<>();
-        fillTable(states_original);   
         this.states_final = states_final;
-        
+        fillTable(states_original);                      
     }
     
     private void fillTable(ArrayList<String> states_original){
@@ -87,6 +86,25 @@ public class CollectionsTraductor {
     
     public ArrayList<StringBuilder> getCollections(){
         return collections;
+    }
+    
+    public void printCollection(){
+        System.out.println("Imprimiendo coleccion..");
+        int i = 0;
+        for (StringBuilder set : collections) {
+            System.out.println(set.toString()+" -> "+newState.get(i++));
+            
+        }
+    }
+    
+    public String getStateOf(String state){
+        for (int i = 0; i < collections.size(); i++) {
+           String set = collections.get(i).toString();
+           if(set.contains(state)){
+               return newState.get(i);           
+           }
+        }
+        return null;
     }
     
     

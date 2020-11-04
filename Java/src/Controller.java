@@ -19,7 +19,7 @@ public class Controller {
                 break;
             case "tarea1p3"://EJECUCION DE Miminizacion de AFD
                 this.ejec_option = 3;
-                AFDMin adfmin = new AFDMin(fopen);          
+                //AFDMin adfmin = new AFDMin(fopen);          
                 break;              
             default:
                 System.err.println("Primer argumento invalido, cerrando programa");
