@@ -3,25 +3,35 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+/**
+ * Clase que representa una Tabla comparadora de un set de estados. Esta tabla
+ * contiene los estado destino de cada estado, segun las transiciones definidas 
+ * por el conjunto delta. 
+ * @author Camilo
+ */
 public class TableComparator {
     
    
-    private String[][] table_states;   
-    private String id_collection;
-    private ArrayList<String> states_original;
-    private String set_collection;
-    private boolean isFinal = false;
+    private String[][] table_states;   //Matriz de estados, representa la tabla 
+    private ArrayList<String> states_original; //cabezera de la matriz, contiene los estados de inicio
+   
+    private String id_collection;       //conjunto de estados
+    private String set_collection;      //etiqueta del conjunto
+    private boolean isFinal = false;    //tabla terminada
 
     public TableComparator(int numCollections, int numSigma, String id_coll,
             String set_coll){   
-        //table_states = new String[collection.length()][sigma_AFD.size()];
+        
         table_states = new String[numCollections][numSigma];   
         id_collection = id_coll;
         set_collection = set_coll;
         states_original = new ArrayList<>();
     }
-    
+    /**
+     * Metodo que analiza si la tabla esta terminada, o todos sus estados
+     * son equivalentes. 
+     * @return 
+     */
     public boolean isFinal(){
         int condition_true = table_states.length;
         int count_equals = 0;      
@@ -38,8 +48,7 @@ public class TableComparator {
         else{
         }
         
-        return isFinal;
-         
+        return isFinal;       
     }
     public void addRow(int i, String[] states){     
         table_states[i]= states;
@@ -59,7 +68,11 @@ public class TableComparator {
             System.out.println("");
         }
     }
-    
+    /**
+     * Metodo que junta los estados equivalentes en un nuevo conjunto, y separa
+     * los estados que son diferentes a este conjunto. 
+     * @return Una lista con conjuntos de estados.
+     */
     public ArrayList<String> joinEqualStates(){
         //System.out.println("Iniciando join equals");
         ArrayList<String> listEquals = new ArrayList<>();
