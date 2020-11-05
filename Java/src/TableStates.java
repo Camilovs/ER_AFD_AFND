@@ -8,7 +8,7 @@ import java.util.Scanner;
  * cada uno representado con una etiqueta o id.
  * @author Camilo
  */
-public class CollectionsTraductor {
+public class TableStates {
 
     private String collection;                  //Nuevo conjunto de estados ej. {s1,s2,s3} = X
     private ArrayList<String> states_final;     //estados finales (aceptado) del AFD
@@ -27,7 +27,7 @@ public class CollectionsTraductor {
      * @param states_original Conjunto estados originales (conjunto K)
      * @param states_final Conjunto de estados finales (conjunto F)
      */
-    public CollectionsTraductor(ArrayList<String> states_original, ArrayList<String> states_final) {
+    public TableStates(ArrayList<String> states_original, ArrayList<String> states_final) {
 
         collections = new ArrayList<>();
         id_collection = new ArrayList<>();

@@ -9,7 +9,7 @@ import java.util.Arrays;
  * por el conjunto delta. 
  * @author Camilo
  */
-public class TableComparator {
+public class TableTransition {
     
    
     private String[][] table_states;   //Matriz de estados, representa la tabla 
@@ -19,7 +19,7 @@ public class TableComparator {
     private String set_collection;      //etiqueta del conjunto
     private boolean isFinal = false;    //tabla terminada
 
-    public TableComparator(int numCollections, int numSigma, String id_coll,
+    public TableTransition(int numCollections, int numSigma, String id_coll,
             String set_coll){   
         
         table_states = new String[numCollections][numSigma];   

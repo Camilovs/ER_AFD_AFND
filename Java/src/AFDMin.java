@@ -17,11 +17,11 @@ public class AFDMin {
     
     /*Tabla que crea conjuntos de estados, es usada en la tecnica de minimizacion
     para juntar los estados equivalentes.*/
-    private CollectionsTraductor collectionTable;   
+    private TableStates collectionTable;   
     
     /*Lista de tablas comparativas por cada conjunto equivalente, se utiliza para 
     definir nuevos estados equivalentes*/
-    private ArrayList<TableComparator> list_tables;
+    private ArrayList<TableTransition> list_tables;
     
     //Nuevos elementos del afd minimizado
     private ArrayList<Link> new_delta;
@@ -65,7 +65,7 @@ public class AFDMin {
      */
     private void fillTableComparator(){     
         //Se crea la tabla de conjunto de estados para la primera iteracion
-        collectionTable = new CollectionsTraductor(afd_origin.getK(), afd_origin.getF());
+        collectionTable = new TableStates(afd_origin.getK(), afd_origin.getF());
         
         //Representa una etiqueta para un conjunto de estados ej {q1,q2,q3} -> A, A seria la etiqueta
         String id_collection;
@@ -82,7 +82,7 @@ public class AFDMin {
                 id_collection= collectionTable.getIdCollection(index_collection);
                 
                 //Se crea una nueva tabla comparadora para el conjunto en cuestion.
-                TableComparator table = new TableComparator(set.length(),
+                TableTransition table = new TableTransition(set.length(),
                         afd_origin.getSigma().size(),id_collection,set.toString());              
                 
                 /*Ciclo comienza a recorrer cada estado de un conjunto de estados para comenzar
@@ -116,7 +116,7 @@ public class AFDMin {
             se analiza si estas tablas estan "terminadas", es decir, todas sus filas
             son iguales (estados equivalentes)*/
             int num_tables_final = 0;
-            for (TableComparator table : list_tables) {
+            for (TableTransition table : list_tables) {
                 if(table.isFinal()){
                     num_tables_final++;
                 }
@@ -155,7 +155,7 @@ public class AFDMin {
         ArrayList<String> f = afd_origin.getF();
         
         //Se inicia un ciclo para recorrer todas las tablas terminadas
-        for (TableComparator table : list_tables) { 
+        for (TableTransition table : list_tables) { 
             
             /*Se obtiene la primera fila de la table en cuestion, 
             como son todas iguales no importa cual obtener.*/
@@ -235,11 +235,11 @@ public class AFDMin {
         this.afd_min = afd_min;
     }
 
-    public CollectionsTraductor getCollectionTable() {
+    public TableStates getCollectionTable() {
         return collectionTable;
     }
 
-    public void setCollectionTable(CollectionsTraductor collectionTable) {
+    public void setCollectionTable(TableStates collectionTable) {
         this.collectionTable = collectionTable;
     }
     
