@@ -51,9 +51,9 @@ public class AFD {
 
     }
     /**
-     * NO VALIDO SOLO PARA FINES DE PRUEBAS
-     * 
-     */
+     * CONSTRUCTOR NO VALIDO SOLO PARA FINES DE PRUEBAS +
+     * acepta scanner y no trabaja con stdin
+     *
     public AFD(Scanner scanner) { 
         this.delta = new ArrayList<>();
         //Scanner scanner = new Scanner(System.in);
@@ -93,7 +93,7 @@ public class AFD {
         this.s = startStateLine.substring(2);
         this.F = extractStates(finalStatesLine);
 
-    }
+    }*/
 
     private ArrayList<String> extractStates(String statesLine) {
         ArrayList<String> states = new ArrayList<>();
@@ -200,8 +200,8 @@ public class AFD {
         this.delta = delta;
     }
 
-    public void print() {
-        System.out.println("AFD M:");
+    public void print(String title) {
+        System.out.println(title);
 
         System.out.print("K={");
         for(int i = 0; i < this.K.size(); i++) {
@@ -230,8 +230,8 @@ public class AFD {
 
     // Unit testing
     public static void main(String[] args) {
-        AFD afd = new AFD();
-        afd.print();
+        AFD afd = new AFD();       
+        afd.print("AFD M");
         //System.out.println("K");
         //for(String k : afd.getK()) {
             //System.out.println(k);
